@@ -1,0 +1,8 @@
+# Compiled files
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+*.exe
+/terraform-provider-aws_v3.30.0_x5.exe
+/terraform.tfstate.backup
+/terraform.tfstate
