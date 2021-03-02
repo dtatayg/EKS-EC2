@@ -1,4 +1,4 @@
-# Create the EKS IAM role and assign the policy for EC2 and EKS services
+# Create the EKS IAM role and assign the policy for EC2 and EKS services to be able to assume
 resource "aws_iam_role" "EKSRole" {
   assume_role_policy = <<POLICY
 {
@@ -15,7 +15,7 @@ resource "aws_iam_role" "EKSRole" {
 }
 POLICY
 }
-# Link the role to the EKS policies for permissions
+# Link the role to the EKS policies for grant granular permissions
 resource "aws_iam_role_policy_attachment" "AmazonEKSClusterPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
   role       = aws_iam_role.EKSRole.name
